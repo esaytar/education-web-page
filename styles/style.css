@@ -1,0 +1,1532 @@
+* {
+  font-family: SF Pro reg;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  color: #000;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.window {
+  width: 100%;
+  height: 120%;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0.2;
+  display: none;
+  background: #000;
+}
+
+body::-webkit-scrollbar, .reviews_scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body::-webkit-scrollbar-thumb, .reviews_scroll::-webkit-scrollbar-thumb {
+  background-color: #E10000;
+  border-radius: 10px;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14.5rem;
+  align-items: center;
+  scrollbar-color: #E10000 #fff;
+  scrollbar-width: thin;
+}
+
+.redtext {
+  color: #E10000;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.type {
+  color: #E10000;
+  font-size: 3.2rem;
+  letter-spacing: 0.2px;
+}
+
+.descript {
+  color: #EFEFEF;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  width: 85%;
+}
+
+.first-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.first-section header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 13rem;
+  background: #fff;
+}
+.first-section header .logo {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.first-section header .logo p {
+  font-size: 4rem;
+  font-family: SF Pro mid;
+}
+.first-section header .navbar {
+  display: flex;
+  gap: 12rem;
+  z-index: 11;
+}
+.first-section header .navbar a {
+  font-size: 2.7rem;
+  position: relative;
+}
+.first-section header .navbar a:hover {
+  color: #E10000;
+  transition: 0.2s;
+}
+.first-section header .navbar a:after {
+  content: "";
+  background: #E10000;
+  height: 0.3rem;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+}
+.first-section header .navbar a:hover:after {
+  display: block;
+  transition: opacity 0.1s linear;
+  opacity: 1;
+}
+.first-section header #burger {
+  display: none;
+  cursor: pointer;
+  stroke: #E10000;
+  z-index: 10;
+}
+.first-section header #burger:hover {
+  stroke: #DE4343;
+}
+.first-section .heroblock {
+  background: url("../img/girl.png") no-repeat;
+  background-size: 100%;
+  display: flex;
+  width: 100%;
+  padding: 24.9rem 11.5rem;
+}
+.first-section .heroblock .maintext {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  width: 50%;
+}
+.first-section .heroblock .maintext h1 {
+  color: #fff;
+  font-family: SF Pro bold;
+  font-size: 7rem;
+  line-height: 7rem;
+}
+.first-section .heroblock .maintext .possiblock {
+  display: flex;
+  gap: 2.2rem;
+  align-items: center;
+}
+.first-section .heroblock .maintext .possiblock .param {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+.first-section .heroblock .maintext .possiblock .param p {
+  color: #EFEFEF;
+  font-size: 1.6rem;
+  font-family: SF Pro bold;
+}
+
+.cards_cont {
+  display: flex;
+  gap: 5rem;
+  width: 80%;
+  margin: -28rem;
+}
+.cards_cont .card {
+  background: #fff;
+  padding: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  border-radius: 2rem;
+  box-shadow: -15px 16px 50px -12px rgba(140, 140, 140, 0.25);
+}
+.cards_cont .card .img-cont {
+  background: #E10000;
+  border-radius: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards_cont .card .img-cont svg {
+  fill: #fff;
+}
+.cards_cont .card .title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.cards_cont .card .desc {
+  font-size: 2rem;
+  color: #777777;
+  text-align: center;
+}
+.cards_cont .activated {
+  background: #E10000;
+}
+.cards_cont .activated .img-cont {
+  background: #fff;
+}
+.cards_cont .activated .img-cont svg {
+  fill: #E10000;
+}
+.cards_cont .activated .title {
+  color: #fff;
+}
+.cards_cont .activated .desc {
+  color: #E7E7E7;
+}
+
+.about_us {
+  width: 84%;
+  display: flex;
+  gap: 8rem;
+  margin-top: 23rem;
+}
+.about_us .img-cont {
+  width: 50%;
+}
+.about_us .img-cont img {
+  width: 100%;
+}
+.about_us .text-block {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.about_us .text-block h1 {
+  font-size: 7rem;
+  font-family: SF Pro bold;
+}
+.about_us .text-block .descript {
+  color: #737373;
+}
+.about_us .text-block .btn {
+  border: 2px #E10000 solid;
+  background: none;
+  padding: 1.6rem 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  color: #E10000;
+  font-size: 1.6rem;
+  font-family: SF Pro bold;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  width: 30%;
+}
+.about_us .text-block .btn:hover {
+  background: #E10000;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.courses_block {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+.courses_block .headline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+.courses_block .headline h1 {
+  font-family: SF Pro bold;
+  font-size: 7rem;
+}
+.courses_block .courses-cont {
+  display: flex;
+  gap: 8rem;
+}
+.courses_block .courses-cont .course {
+  display: flex;
+  flex-direction: column;
+  gap: 2.7rem;
+  border-radius: 25px;
+  width: 100%;
+}
+.courses_block .courses-cont .course img {
+  width: 100%;
+}
+.courses_block .courses-cont .course .courself {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem 2rem;
+  justify-content: center;
+  gap: 3rem;
+}
+.courses_block .courses-cont .course .courself .topcrs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courses_block .courses-cont .course .courself .topcrs .who {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.courses_block .courses-cont .course .courself .topcrs .who img {
+  width: 44px;
+  aspect-ratio: 1/1;
+  border-radius: 10rem;
+}
+.courses_block .courses-cont .course .courself .topcrs p {
+  font-size: 1.8rem;
+  color: #737373;
+  letter-spacing: 0.2px;
+}
+.courses_block .courses-cont .course .courself .namecrs {
+  font-family: SF Pro bold;
+  font-size: 2.5rem;
+  letter-spacing: 0.2px;
+}
+.courses_block .courses-cont .course .courself .bottomcrs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courses_block .courses-cont .course .courself .bottomcrs .price {
+  font-size: 2.1rem;
+  color: #E10000;
+  font-weight: 600;
+}
+.courses_block .courses-cont .course:hover {
+  background: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+.rating {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.rating .stars-cont {
+  display: flex;
+  gap: 0.5rem;
+}
+.rating .stars-cont .star {
+  width: auto;
+}
+.rating p {
+  font-size: 2.1rem;
+  color: #737373;
+}
+
+.reviews_cont {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+  padding-top: 5rem;
+}
+.reviews_cont .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+.reviews_cont .heading p {
+  font-family: SF Pro mid;
+  font-size: 3rem;
+  color: #E10000;
+  letter-spacing: 0.2px;
+}
+.reviews_cont .heading h1 {
+  font-size: 7rem;
+  font-family: SF Pro bold;
+}
+.reviews_cont .reviews_scroll {
+  width: 100%;
+  overflow-x: scroll;
+  padding-bottom: 2.5rem;
+}
+.reviews_cont .reviews_scroll .revwscr {
+  display: flex;
+  gap: 2.5rem;
+  width: 155%;
+}
+.reviews_cont .reviews_scroll .revwscr .review {
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem 4rem;
+  border-radius: 25px;
+  background: #F9F9F9;
+}
+.reviews_cont .reviews_scroll .revwscr .review .top-cont {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+.reviews_cont .reviews_scroll .revwscr .review .top-cont img {
+  aspect-ratio: 1/1;
+}
+.reviews_cont .reviews_scroll .revwscr .review .top-cont .author {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.reviews_cont .reviews_scroll .revwscr .review .top-cont .author p {
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+.reviews_cont .reviews_scroll .revwscr .review .thoughts {
+  color: #737373;
+  font-size: 2.2rem;
+  letter-spacing: 0.2px;
+  line-height: 32px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  background: #333333;
+  padding: 5.8rem 12rem;
+  justify-content: center;
+  height: 524px;
+  justify-content: space-between;
+  gap: 12rem;
+}
+.footer .left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.footer .left-column .logo {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.footer .left-column .logo p {
+  color: #fff;
+  font-size: 4.8rem;
+  font-family: SF Pro mid;
+}
+.footer .left-column .adress, .footer .left-column .phone-num {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.footer .left-column .email {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+.footer .left-column p, .footer .left-column a {
+  color: #fff;
+  font-size: 2rem;
+}
+.footer .categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.footer .categories p {
+  color: #fff;
+  font-size: 4rem;
+  font-family: SF Pro mid;
+}
+.footer .categories ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.footer .categories ul li {
+  color: #fff;
+  font-size: 2rem;
+}
+.footer .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+.footer .socials .get {
+  font-family: SF Pro mid;
+  font-size: 4.8rem;
+}
+.footer .socials p {
+  color: #fff;
+  font-size: 2rem;
+}
+.footer .socials .placehold {
+  display: flex;
+  padding: 0.5rem 0;
+  align-items: center;
+}
+.footer .socials .placehold input {
+  border: none;
+  outline: none;
+  padding: 0.3rem 10.2rem 0.3rem 2.2rem;
+  box-shadow: -5px 8px 28px -4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  font-size: 1.8rem;
+  width: 440px;
+  min-height: 52px;
+}
+.footer .socials .placehold .send {
+  border: none;
+  background: #E10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 0.5rem 2.6rem;
+  margin-left: -9rem;
+  height: 46px;
+  cursor: pointer;
+}
+.footer .socials .placehold .send:hover {
+  background: #DE4343;
+}
+.footer .socials .socialinks {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .socials .socialinks img {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 279px) and (max-width: 541px) {
+  .descript {
+    font-size: 1.5rem;
+  }
+  body {
+    gap: 5.5rem;
+  }
+  .courses-scroll::-webkit-scrollbar, .reviews_scroll::-webkit-scrollbar {
+    height: 7px;
+    background-color: #fff;
+  }
+  .courses-scroll::-webkit-scrollbar-thumb, .reviews_scroll::-webkit-scrollbar-thumb {
+    background-color: #E10000;
+    border-radius: 10px;
+  }
+  .first-section {
+    gap: 0;
+  }
+  .first-section header {
+    padding: 0.8rem 2rem;
+  }
+  .first-section header .logo {
+    gap: 1rem;
+  }
+  .first-section header .logo svg {
+    width: 22px;
+  }
+  .first-section header .logo p {
+    font-size: 2rem;
+  }
+  .first-section header .navbar {
+    width: 50%;
+    height: 200%;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 6rem 3rem 2rem;
+    background: #fff;
+  }
+  .first-section header .navbar a {
+    width: auto;
+    font-size: 1.8rem;
+    font-family: SF Pro mid;
+  }
+  .first-section header .navbar a:hover:after {
+    opacity: 0;
+  }
+  .first-section header .navbar a:hover {
+    color: #E10000;
+  }
+  .first-section header #burger {
+    display: block;
+    width: 25px;
+  }
+  .first-section .heroblock {
+    background-size: 250%;
+    background-position: top;
+    padding: 3rem 1.5rem;
+    height: auto;
+  }
+  .first-section .heroblock .maintext {
+    gap: 2.5rem;
+    width: 100%;
+  }
+  .first-section .heroblock .maintext .type {
+    font-size: 1.6rem;
+  }
+  .first-section .heroblock .maintext h1 {
+    width: 81%;
+    font-size: 2.5rem;
+    line-height: 27px;
+  }
+  .first-section .heroblock .maintext .possiblock {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .first-section .heroblock .maintext .possiblock .param {
+    gap: 0.5rem;
+  }
+  .first-section .heroblock .maintext .possiblock .param img {
+    width: 17px;
+  }
+  .first-section .heroblock .maintext .possiblock .param p {
+    font-size: 0.9rem;
+    color: #E3E3E3;
+  }
+  .cards_cont {
+    flex-direction: column;
+    gap: 2rem;
+    margin: -4rem;
+    align-items: center;
+  }
+  .cards_cont .card {
+    padding: 2.1rem;
+  }
+  .cards_cont .card .img-cont img {
+    width: 28px;
+  }
+  .cards_cont .card .title, .cards_cont .card .desc {
+    font-size: 1.5rem;
+  }
+  .about_us {
+    width: 90%;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 4rem;
+  }
+  .about_us .img-cont {
+    width: 100%;
+  }
+  .about_us .text-block {
+    width: 100%;
+    gap: 2.5rem;
+  }
+  .about_us .text-block .common {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .about_us .text-block .common .type {
+    font-size: 2.2rem;
+  }
+  .about_us .text-block .common h1 {
+    font-size: 2.8rem;
+    width: 100%;
+    line-height: 55px;
+  }
+  .about_us .text-block .descript {
+    width: 100%;
+    line-height: 28px;
+  }
+  .about_us .text-block .btn {
+    width: 60%;
+    font-size: 1.2rem;
+    padding: 1.3rem 1.4rem;
+  }
+  .courses_block {
+    width: 90%;
+    gap: 2.2rem;
+  }
+  .courses_block .headline {
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .courses_block .headline .type {
+    font-size: 1.7rem;
+  }
+  .courses_block .headline h1 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  .courses_block .courses-scroll {
+    width: 100%;
+    overflow-x: scroll;
+    padding-bottom: 1.5rem;
+  }
+  .courses_block .courses-scroll .courses-cont {
+    width: 150%;
+    gap: 3.6rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course {
+    width: 100%;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself {
+    padding: 0 1rem 1.5rem;
+    gap: 1.9rem;
+    justify-content: space-between;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .topcrs .who {
+    gap: 1rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .topcrs .who img {
+    width: 32px;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .topcrs p {
+    font-size: 1.4rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .namecrs {
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: SF Pro mid;
+    line-height: 26px;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs {
+    gap: 6rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .price {
+    font-size: 1.3rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .stars-cont img {
+    width: 1.4rem;
+  }
+  .rating .stars-cont img {
+    width: 1.4rem;
+  }
+  .rating p {
+    font-size: 1.3rem;
+  }
+  .reviews_cont {
+    width: 90%;
+    gap: 2rem;
+  }
+  .reviews_cont .heading {
+    gap: 0;
+    align-items: center;
+  }
+  .reviews_cont .heading p {
+    font-size: 1.7rem;
+  }
+  .reviews_cont .heading h1 {
+    line-height: 50px;
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  .reviews_cont .reviews_scroll .revwscr {
+    width: 200%;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review {
+    width: auto;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont img {
+    width: 43px;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont .author {
+    line-height: 20px;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont .author p {
+    font-size: 1.3rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .thoughts {
+    font-size: 1.5rem;
+    min-width: 230px;
+  }
+  .footer {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 5.8rem 1rem;
+    gap: 7rem;
+  }
+  .footer .left-column {
+    width: 85%;
+    align-items: center;
+  }
+  .footer .left-column .logo {
+    gap: 1rem;
+  }
+  .footer .left-column .logo svg {
+    width: 35px;
+  }
+  .footer .left-column .logo p {
+    font-size: 3rem;
+  }
+  .footer .left-column img {
+    width: 25px;
+  }
+  .footer .left-column p, .footer .left-column a {
+    font-size: 1.5rem;
+  }
+  .footer .left-column .adress, .footer .left-column .phone-num, .footer .left-column .email {
+    width: 100%;
+    gap: 2rem;
+  }
+  .footer .categories {
+    align-items: center;
+  }
+  .footer .categories p {
+    font-size: 3.5rem;
+  }
+  .footer .categories ul {
+    align-items: center;
+  }
+  .footer .categories ul li {
+    font-size: 1.8rem;
+  }
+  .footer .socials {
+    width: 95%;
+    align-items: center;
+    gap: 3rem;
+  }
+  .footer .socials .get {
+    font-size: 4.2rem;
+  }
+  .footer .socials p {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .footer .socials .placehold {
+    justify-content: center;
+    width: 100%;
+  }
+  .footer .socials .placehold input {
+    min-height: 46px;
+    width: 90%;
+    font-size: 1.5rem;
+  }
+  .footer .socials .placehold .send {
+    height: 38px;
+    margin-left: -7.4rem;
+    padding: 0.5rem 2.2rem;
+  }
+  .footer .socials .placehold .send svg {
+    width: 26px;
+  }
+  .footer .socials .socialinks {
+    width: 90%;
+  }
+  .footer .socials .socialinks img {
+    width: 32px;
+  }
+}
+@media screen and (min-width: 359px) and (max-width: 541px) {
+  .descript {
+    font-size: 1.7rem;
+  }
+  .first-section {
+    overflow-x: hidden;
+  }
+  .first-section header .logo {
+    gap: 1.2rem;
+  }
+  .first-section header .logo svg {
+    width: 25px;
+  }
+  .first-section header .logo p {
+    font-size: 2.2rem;
+  }
+  .first-section header .navbar a {
+    font-size: 2.1rem;
+  }
+  .first-section .heroblock {
+    background-position: -510%;
+    width: 938px;
+    height: 416px;
+    background-size: 95%;
+    padding: 6rem 1.5rem;
+  }
+  .first-section .heroblock .maintext {
+    width: 40%;
+  }
+  .first-section .heroblock .maintext .type {
+    font-size: 2rem;
+  }
+  .first-section .heroblock .maintext h1 {
+    width: 70%;
+    font-size: 3.2rem;
+    line-height: 34px;
+  }
+  .first-section .heroblock .maintext .descript {
+    line-height: 20px;
+  }
+  .first-section .heroblock .maintext .possiblock {
+    width: 90%;
+  }
+  .first-section .heroblock .maintext .possiblock .param .hwmuch {
+    font-size: 1.3rem;
+  }
+  .cards_cont .card {
+    width: 85%;
+  }
+  .cards_cont .card .desc, .cards_cont .card .title {
+    font-size: 1.7rem;
+  }
+  .about_us .text-block .common {
+    gap: 1.6rem;
+  }
+  .about_us .text-block .common h1 {
+    font-size: 3.1rem;
+  }
+  .about_us .text-block .btn {
+    font-size: 1.4rem;
+  }
+  .courses_block .headline h1 {
+    line-height: 50px;
+    font-size: 3.1rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course {
+    gap: 1.5rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself {
+    padding: 0 1.5rem 2rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .namecrs {
+    line-height: 32px;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs {
+    gap: 10rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .price {
+    font-size: 1.5rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .stars-cont img {
+    width: 1.6rem;
+  }
+  .rating .stars-cont img {
+    width: 1.6rem;
+  }
+  .rating p {
+    font-size: 1.5rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .thoughts {
+    min-width: 290px;
+  }
+}
+@media screen and (min-width: 389px) and (max-width: 541px) {
+  .courses_block .courses-scroll .courses-cont .course .courself .topcrs p {
+    font-size: 1.6rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .namecrs {
+    font-size: 1.8rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs {
+    gap: 11rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .price, .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs p {
+    font-size: 1.8rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .rating .stars-cont img {
+    width: 1.8rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .rating p {
+    font-size: 1.7rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont .author p {
+    font-size: 1.6rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .thoughts {
+    font-size: 1.7rem;
+    min-width: 315px;
+  }
+  .rating .stars-cont img {
+    width: 1.8rem;
+  }
+  .rating p {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 412px) and (max-width: 541px) {
+  .first-section header .logo svg {
+    width: 26px;
+  }
+  .first-section header .logo p {
+    font-size: 2.4rem;
+  }
+  .first-section header #burger {
+    width: 34px;
+  }
+  .first-section .heroblock {
+    background-size: 105%;
+    background-position: 625%;
+  }
+  .about_us .text-block .descript {
+    font-size: 1.9rem;
+  }
+  .about_us .text-block .btn {
+    font-size: 1.6rem;
+  }
+  .courses_block .headline .type {
+    font-size: 2.1rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .topcrs p {
+    font-size: 1.6rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .namecrs {
+    font-size: 2rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs {
+    gap: 13rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .price, .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs p {
+    font-size: 1.7rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .bottomcrs .stars-cont img {
+    width: 1.8rem;
+  }
+  .reviews_cont .heading p {
+    font-size: 2.1rem;
+  }
+  .reviews_cont .heading h1 {
+    font-size: 2.8rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont .author p {
+    font-size: 1.7rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .thoughts {
+    font-size: 1.9rem;
+    min-width: 335px;
+  }
+  .rating .stars-cont img {
+    width: 1.8rem;
+  }
+  .rating p {
+    font-size: 1.7rem;
+  }
+  .footer .left-column .logo p {
+    font-size: 3.5rem;
+  }
+  .footer .left-column p, .footer .left-column a {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 1281px) {
+  .courses-scroll::-webkit-scrollbar, .reviews_scroll::-webkit-scrollbar {
+    height: 7px;
+  }
+  .courses-scroll::-webkit-scrollbar-thumb, .reviews_scroll::-webkit-scrollbar-thumb {
+    background-color: #E10000;
+    border-radius: 10px;
+  }
+  .first-section {
+    gap: 0;
+  }
+  .first-section header {
+    padding: 2rem 6.5rem;
+  }
+  .first-section header .logo {
+    gap: 1.5rem;
+  }
+  .first-section header .logo svg {
+    width: 46px;
+  }
+  .first-section header .navbar {
+    gap: 9.8rem;
+  }
+  .first-section header .navbar a {
+    font-size: 2rem;
+  }
+  .first-section .heroblock {
+    background-size: 120%;
+    background-position-x: 40%;
+    padding: 20rem 7.8rem;
+  }
+  .first-section .heroblock .maintext {
+    width: 80%;
+  }
+  .cards_cont {
+    width: 90%;
+    gap: 4rem;
+    margin: -20rem;
+  }
+  .cards_cont .card .title, .cards_cont .card .desc {
+    font-size: 1.6rem;
+  }
+  .about_us {
+    margin-top: 14rem;
+  }
+  .about_us .img-cont {
+    width: 60%;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    height: auto;
+  }
+  .about_us .img-cont img {
+    width: 145%;
+    height: 550px;
+  }
+  .about_us .text-block .common .type {
+    font-size: 2.6rem;
+  }
+  .about_us .text-block .common h1 {
+    font-size: 4rem;
+    line-height: 55px;
+  }
+  .about_us .text-block .descript {
+    font-size: 1.8rem;
+    line-height: 32px;
+  }
+  .about_us .text-block .btn {
+    width: 50%;
+  }
+  .courses_block {
+    width: 93%;
+    gap: 3rem;
+  }
+  .courses_block .headline {
+    gap: 0;
+    align-items: center;
+  }
+  .courses_block .headline .type {
+    font-size: 2.6rem;
+  }
+  .courses_block .headline h1 {
+    font-size: 4rem;
+    line-height: 60px;
+  }
+  .courses_block .courses-scroll {
+    overflow-x: scroll;
+    padding-bottom: 3rem;
+  }
+  .courses_block .courses-scroll .courses-cont {
+    gap: 4.6rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course img {
+    width: auto;
+  }
+  .reviews_cont {
+    width: 90%;
+    padding: 0;
+    gap: 5rem;
+  }
+  .reviews_cont .heading p {
+    font-size: 2.6rem;
+  }
+  .reviews_cont .heading h1 {
+    font-size: 4rem;
+    line-height: 60px;
+  }
+  .reviews_cont .reviews_scroll .revwscr {
+    width: 200%;
+  }
+  .footer {
+    padding: 5.8rem;
+  }
+  .footer .left-column {
+    width: 30%;
+    gap: 4.4rem;
+  }
+  .footer .left-column .logo svg {
+    width: 46px;
+  }
+  .footer .left-column .logo p {
+    font-size: 3.4rem;
+  }
+  .footer .left-column p, .footer .left-column a {
+    font-size: 1.6rem;
+  }
+  .footer .categories p {
+    font-size: 3.4rem;
+  }
+  .footer .categories ul li {
+    font-size: 1.6rem;
+  }
+  .footer .socials {
+    width: auto;
+  }
+  .footer .socials .get {
+    font-size: 3.4rem;
+  }
+  .footer .socials p {
+    font-size: 1.6rem;
+  }
+  .footer .socials .placehold input {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+  .footer .socials .socialinks {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 1024px) {
+  body {
+    gap: 12rem;
+  }
+  .first-section header {
+    padding: 2rem 6rem;
+  }
+  .first-section header .logo svg {
+    width: 42px;
+  }
+  .first-section header .navbar {
+    gap: 6rem;
+  }
+  .first-section .heroblock {
+    padding: 14rem 9rem;
+  }
+  .first-section .heroblock .maintext {
+    gap: 7rem;
+  }
+  .first-section .heroblock .maintext h1 {
+    font-size: 5rem;
+    line-height: 52px;
+    width: 75%;
+  }
+  .first-section .heroblock .maintext .possiblock .param p {
+    font-size: 1.4rem;
+    letter-spacing: 0.2px;
+  }
+  .cards_cont {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -23rem;
+  }
+  .cards_cont .card {
+    width: 35%;
+  }
+  .about_us {
+    gap: 6rem;
+  }
+  .about_us .img-cont img {
+    width: 170%;
+    height: auto;
+  }
+  .about_us .text-block {
+    width: 50%;
+    gap: 1rem;
+  }
+  .about_us .text-block .common h1 {
+    font-size: 3.5rem;
+  }
+  .about_us .text-block .descript {
+    font-size: 1.6rem;
+  }
+  .about_us .text-block .btn {
+    width: 60%;
+    font-size: 1.4rem;
+  }
+  .courses_block .headline .type {
+    font-size: 2.4rem;
+  }
+  .courses_block .headline h1 {
+    font-size: 3.8rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course img {
+    width: 410px;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .topcrs .who p {
+    font-size: 1.6rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .namecrs {
+    font-size: 2.2rem;
+  }
+  .courses_block .courses-scroll .courses-cont .course .courself .star {
+    width: auto;
+  }
+  .reviews_cont {
+    gap: 4rem;
+    width: 93%;
+  }
+  .reviews_cont .heading {
+    gap: 0;
+  }
+  .reviews_cont .heading .type {
+    font-size: 2.4rem;
+  }
+  .reviews_cont .heading h1 {
+    font-size: 3.8rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont .author {
+    gap: 0.4rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont .author p {
+    font-size: 1.7rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .thoughts {
+    font-size: 2rem;
+    min-width: 335px;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .rating p {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 912px) {
+  .first-section .heroblock {
+    background-size: 144%;
+  }
+  .first-section .heroblock .maintext {
+    width: 100%;
+    gap: 6rem;
+  }
+  .first-section .heroblock .maintext h1 {
+    width: 80%;
+  }
+  .first-section .heroblock .maintext .descript {
+    width: 70%;
+  }
+  .first-section .heroblock .maintext .possiblock .param p {
+    font-size: 1.6rem;
+  }
+  .cards_cont {
+    margin: -18rem;
+  }
+  .about_us {
+    width: 90%;
+    gap: 4rem;
+  }
+  .about_us .img-cont img {
+    width: 165%;
+  }
+  .about_us .text-block {
+    gap: 0;
+  }
+  .about_us .text-block .descript {
+    width: 100%;
+  }
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    gap: 8.5rem;
+  }
+  .footer .left-column {
+    width: 100%;
+    align-items: center;
+  }
+  .footer .left-column .logo svg {
+    width: 52px;
+  }
+  .footer .left-column .logo p {
+    font-size: 4.8rem;
+  }
+  .footer .left-column p, .footer .left-column a {
+    font-size: 2.3rem;
+  }
+  .footer .left-column img {
+    width: 27px;
+  }
+  .footer .categories {
+    align-items: center;
+  }
+  .footer .categories p {
+    font-size: 4.2rem;
+  }
+  .footer .categories ul {
+    align-items: center;
+  }
+  .footer .categories ul li {
+    font-size: 2.3rem;
+  }
+  .footer .socials {
+    width: 45%;
+    align-items: center;
+  }
+  .footer .socials .get {
+    font-size: 4.2rem;
+  }
+  .footer .socials p {
+    font-size: 2.3rem;
+  }
+  .footer .socials .placehold {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 820px) {
+  .first-section header {
+    padding: 2rem 4.5rem;
+  }
+  .first-section header .navbar {
+    width: 40%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    left: 60%;
+    top: 0;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 7rem 6rem 2rem;
+    background: #fff;
+  }
+  .first-section header .navbar a {
+    font-size: 2.4rem;
+  }
+  .first-section header .navbar a:hover:after {
+    opacity: 0;
+  }
+  .first-section header .navbar a:hover {
+    color: #E10000;
+  }
+  .first-section header #burger {
+    display: block;
+    width: 47px;
+  }
+  .first-section .heroblock {
+    padding: 10rem 9rem;
+  }
+  .first-section .heroblock .maintext {
+    gap: 5.5rem;
+  }
+  .first-section .heroblock .maintext .possiblock {
+    flex-wrap: wrap;
+  }
+  .cards_cont .card {
+    width: 40%;
+  }
+  .about_us {
+    flex-direction: column;
+    gap: 6rem;
+  }
+  .about_us .img-cont {
+    width: 100%;
+    height: 433px;
+    overflow-y: hidden;
+  }
+  .about_us .img-cont img {
+    width: 100%;
+    height: 488px;
+  }
+  .about_us .text-block {
+    width: 100%;
+    gap: 3.5rem;
+  }
+  .about_us .text-block .common {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .about_us .text-block .descript {
+    font-size: 2rem;
+  }
+  .about_us .text-block .btn {
+    width: 28%;
+  }
+}
+@media screen and (min-width: 541px) and (max-width: 768px) {
+  .first-section .heroblock {
+    background-size: 160%;
+  }
+  .first-section .heroblock .maintext {
+    gap: 4rem;
+  }
+  .cards_cont {
+    margin: -17rem;
+  }
+  .about_us .text-block .common h1 {
+    font-size: 3.8rem;
+  }
+  .about_us .text-block .btn {
+    width: 32%;
+    font-size: 1.6rem;
+  }
+  .footer .socials {
+    width: 55%;
+  }
+  .footer .socials .placehold input {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 540px) and (max-width: 541px) {
+  .first-section .heroblock {
+    height: 455px;
+    background-size: 104%;
+    padding: 5rem 3rem;
+    background-position: 620%;
+  }
+  .first-section .heroblock .maintext {
+    width: 60%;
+    gap: 4rem;
+  }
+  .first-section .heroblock .maintext h1 {
+    width: 60%;
+  }
+  .first-section .heroblock .maintext .descript {
+    width: 70%;
+  }
+  .cards_cont {
+    margin: -10rem;
+  }
+  .cards_cont .card {
+    width: 60%;
+  }
+  .cards_cont .card .desc, .cards_cont .card .title {
+    font-size: 1.6rem;
+  }
+  .about_us {
+    margin-top: 10rem;
+  }
+  .about_us .text-block {
+    gap: 3rem;
+  }
+  .about_us .text-block .common {
+    gap: 0.5rem;
+  }
+  .about_us .text-block .common h1 {
+    font-size: 3.3rem;
+  }
+  .about_us .text-block .btn {
+    width: 45%;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .top-cont .author p {
+    font-size: 1.5rem;
+  }
+  .reviews_cont .reviews_scroll .revwscr .review .thoughts {
+    font-size: 1.7rem;
+  }
+  .footer .socials .placehold {
+    width: 65%;
+  }
+  .footer .socials .socialinks {
+    width: 60%;
+  }
+}
+@font-face {
+  font-family: "SF Pro reg";
+  src: url("../fonts/SFProDisplay-Regular.woff");
+}
+@font-face {
+  font-family: "SF Pro bold";
+  src: url("../fonts/SFProDisplay-Bold.woff");
+}
+@font-face {
+  font-family: "SF Pro mid";
+  src: url("../fonts/SFProDisplay-Medium.woff");
+}/*# sourceMappingURL=style.css.map */
